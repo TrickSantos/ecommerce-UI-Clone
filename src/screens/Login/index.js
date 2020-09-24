@@ -35,7 +35,7 @@ const Login = ({ navigation }) => {
     navigation.navigate("Recuperar");
   };
   const handleLogin = () => {
-    navigation.navigate("Login");
+    navigation.navigate("App");
   };
 
   return (

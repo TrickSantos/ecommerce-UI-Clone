@@ -36,7 +36,7 @@ const icons = {
 const AppRoutes = () => {
   return (
     <AppTabs.Navigator
-      initialRouteName="Home"
+      initialRouteName="Shop"
       screenOptions={({ route }) => ({
         tabBarIcon: ({ color, size }) => {
           const { lib: Icon, name } = icons[route.name];
@@ -45,11 +45,11 @@ const AppRoutes = () => {
       })}
       tabBarOptions={{
         style: {
-          backgroundColor: "#131418",
+          backgroundColor: "#FFFFFF",
           borderTopColor: "rgba(255, 255, 255, 0.2)",
         },
-        activeTintColor: "#fff",
-        inactiveTintColor: "#92929c",
+        activeTintColor: "#DB3022",
+        inactiveTintColor: "#9B9B9B",
       }}
     >
       <AppTabs.Screen
