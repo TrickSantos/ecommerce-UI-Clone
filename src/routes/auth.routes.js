@@ -9,16 +9,27 @@ import App from "./app.routes";
 const AppStack = createStackNavigator();
 
 const LoginRoutes = () => (
-  <AppStack.Navigator
-    initialRouteName="App"
-    screenOptions={{
-      headerShown: false,
-    }}
-  >
-    <AppStack.Screen name="Login" component={Login} />
-    <AppStack.Screen name="Cadastro" component={Cadastro} />
-    <AppStack.Screen name="Recuperar" component={Recuperar} />
-    <AppStack.Screen name="App" component={App} />
+  <AppStack.Navigator initialRouteName="App">
+    <AppStack.Screen
+      name="Login"
+      component={Login}
+      options={{ headerShown: false }}
+    />
+    <AppStack.Screen
+      name="Cadastro"
+      component={Cadastro}
+      options={{ headerShown: false }}
+    />
+    <AppStack.Screen
+      name="Recuperar"
+      component={Recuperar}
+      options={{ headerShown: false }}
+    />
+    <AppStack.Screen
+      name="App"
+      component={App}
+      options={{ headerShown: false }}
+    />
   </AppStack.Navigator>
 );
 

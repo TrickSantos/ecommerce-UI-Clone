@@ -5,7 +5,7 @@ import { AntDesign, Feather, MaterialIcons } from "@expo/vector-icons";
 import Home from "../screens/Home";
 import Bag from "../screens/Bag";
 import Profile from "../screens/Profile";
-import Shop from "../screens/Shop";
+import Shop from "../routes/shop.routes";
 import Favoritos from "../screens/Favoritos";
 
 const AppTabs = createBottomTabNavigator();
