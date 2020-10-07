@@ -47,8 +47,8 @@ The project was developed using the following technologies
 
 - ### **Requeriments**
 
-  - It is **necessry** to have the **[Node.js](https://nodejs.org/en/)** instaled in the PC.
-  - Also, it is **needed** to have ter um a package manager be the **[NPM](https://www.npmjs.com/)** or the **[Yarn](https://yarnpkg.com/)**.
+  - It is **necessary** to have the **[Node.js](https://nodejs.org/en/)** instaled in the PC.
+  - Also, it is **needed** to have a package manager: **[NPM](https://www.npmjs.com/)** or **[Yarn](https://yarnpkg.com/)**.
 
 1. Make a clone :
 
