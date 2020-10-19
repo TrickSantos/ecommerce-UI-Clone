@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import {
   MaterialIcons,
   MaterialCommunityIcons,
   FontAwesome,
 } from "@expo/vector-icons";
+import Animated from "react-native-reanimated";
+import BottomSheet from "reanimated-bottom-sheet";
 import {
   Container,
   CategoryContainer,
@@ -16,6 +18,12 @@ import {
   Exibition,
   Label,
   ProductList,
+  SortBy,
+  SortOption,
+  OptionText,
+  HeaderSort,
+  HeaderTitle,
+  HeaderDot,
 } from "./styles";
 import img01 from "../../../assets/produtos/01.png";
 import img02 from "../../../assets/produtos/02.png";
@@ -67,6 +75,9 @@ const Catalogo = () => {
       preco: "20,00",
     },
   ];
+
+  const [sort, setSort] = useState("Price: lowest to high");
+
   const renderItem = ({ item }) => (
     <Card
       image={item.image}
@@ -75,6 +86,61 @@ const Catalogo = () => {
       preco={item.preco}
     />
   );
+
+  const renderHeader = () => (
+    <HeaderSort>
+      <HeaderDot />
+      <HeaderTitle>Sort by</HeaderTitle>
+    </HeaderSort>
+  );
+
+  const renderContent = () => (
+    <SortBy>
+      <SortOption
+        onPress={() => {
+          sheetRef.current.snapTo(1);
+          setSort("Popular");
+        }}
+      >
+        <OptionText>Popular</OptionText>
+      </SortOption>
+      <SortOption
+        onPress={() => {
+          sheetRef.current.snapTo(1);
+          setSort("Newest");
+        }}
+      >
+        <OptionText>Newest</OptionText>
+      </SortOption>
+      <SortOption
+        onPress={() => {
+          sheetRef.current.snapTo(1);
+          setSort("Customer review");
+        }}
+      >
+        <OptionText>Customer review</OptionText>
+      </SortOption>
+      <SortOption
+        onPress={() => {
+          sheetRef.current.snapTo(1);
+          setSort("Price: lowest to high");
+        }}
+      >
+        <OptionText>Price: lowest to high</OptionText>
+      </SortOption>
+      <SortOption
+        onPress={() => {
+          sheetRef.current.snapTo(1);
+          setSort("Price: highest to low");
+        }}
+      >
+        <OptionText>Price: highest to low</OptionText>
+      </SortOption>
+    </SortBy>
+  );
+
+  const sheetRef = React.createRef();
+
   return (
     <Container>
       <CategoryContainer>
@@ -101,13 +167,13 @@ const Catalogo = () => {
           <MaterialIcons name="filter-list" size={24} color="black" />
           <Label>Filters</Label>
         </Filter>
-        <Sort>
+        <Sort onPress={() => sheetRef.current.snapTo(0)}>
           <MaterialCommunityIcons
             name="swap-vertical"
             size={24}
             color="black"
           />
-          <Label>Price: lowest to high</Label>
+          <Label>{sort}</Label>
         </Sort>
         <Exibition>
           <FontAwesome name="th-list" size={24} color="black" />
@@ -123,6 +189,15 @@ const Catalogo = () => {
           justifyContent: "space-between",
           margin: 5,
         }}
+      />
+      <BottomSheet
+        ref={sheetRef}
+        snapPoints={[210, 0]}
+        enabledContentTapInteraction={false}
+        initialSnap={1}
+        borderRadius={0}
+        renderContent={renderContent}
+        renderHeader={renderHeader}
       />
     </Container>
   );

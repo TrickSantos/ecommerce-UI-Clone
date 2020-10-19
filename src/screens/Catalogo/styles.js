@@ -71,3 +71,41 @@ export const Label = styled.Text`
 export const ProductList = styled.FlatList`
   padding: 15px;
 `;
+export const SortBy = styled.View`
+  background-color: white;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+`;
+
+export const SortOption = styled.TouchableOpacity`
+  padding: 16px;
+  height: 35px;
+  justify-content: center;
+`;
+export const OptionText = styled.Text`
+  font-size: 16px;
+  font-family: Metropolis_SemiBold;
+`;
+export const HeaderSort = styled.View`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+`;
+
+export const HeaderTitle = styled.Text`
+  font-size: 18px;
+  font-family: Metropolis_SemiBold;
+`;
+
+export const HeaderDot = styled.View`
+  height: 5px;
+  width: 70px;
+  margin: 3px;
+  background-color: #979797;
+  border-radius: 5px;
+`;
