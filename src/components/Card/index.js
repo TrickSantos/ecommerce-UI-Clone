@@ -16,9 +16,9 @@ import {
   Price,
 } from "./styles";
 
-const Card = ({ image, marca, produto, preco }) => {
+const Card = ({ image, marca, produto, preco, navigation }) => {
   return (
-    <Container>
+    <Container onPress={() => navigation.navigate("Product")}>
       <ImageNew
         source={image}
         imageStyle={{ borderRadius: 5 }}

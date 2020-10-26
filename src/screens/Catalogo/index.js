@@ -30,7 +30,7 @@ import img02 from "../../../assets/produtos/02.png";
 import img03 from "../../../assets/produtos/03.png";
 import Card from "../../components/Card";
 
-const Catalogo = () => {
+const Catalogo = ({ navigation }) => {
   const products = [
     {
       key: String(Math.random()),
@@ -84,6 +84,7 @@ const Catalogo = () => {
       marca={item.marca}
       produto={item.produto}
       preco={item.preco}
+      navigation={navigation}
     />
   );
 

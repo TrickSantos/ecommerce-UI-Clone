@@ -1,5 +1,9 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import {
+  createStackNavigator,
+  HeaderBackButton,
+} from "@react-navigation/stack";
 import { AntDesign, Feather, MaterialIcons } from "@expo/vector-icons";
 
 import Home from "../screens/Home";
@@ -7,8 +11,10 @@ import Bag from "../screens/Bag";
 import Profile from "../screens/Profile";
 import Shop from "../routes/shop.routes";
 import Favoritos from "../screens/Favoritos";
+import Product from "../screens/Product";
 
 const AppTabs = createBottomTabNavigator();
+const AppStack = createStackNavigator();
 
 const icons = {
   Home: {
@@ -31,6 +37,32 @@ const icons = {
     lib: Feather,
     name: "user",
   },
+};
+
+const HomeRoutes = () => {
+  return (
+    <AppStack.Navigator initialRouteName="Home">
+      <AppStack.Screen
+        name="Home"
+        component={AppRoutes}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <AppStack.Screen
+        name="Product"
+        component={Product}
+        options={{
+          headerShown: true,
+          title: "Women's Tops",
+          headerTitleAlign: "center",
+          headerLeft: (props) => (
+            <HeaderBackButton {...props} onPress={() => {}} />
+          ),
+        }}
+      />
+    </AppStack.Navigator>
+  );
 };
 
 const AppRoutes = () => {
@@ -77,4 +109,4 @@ const AppRoutes = () => {
   );
 };
 
-export default AppRoutes;
+export default HomeRoutes;

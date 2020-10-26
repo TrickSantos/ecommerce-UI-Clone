@@ -10,6 +10,7 @@ import Recuperar from "../screens/Recuperar";
 import App from "./app.routes"; */
 import Shop from "../screens/Shop";
 import Catalogo from "../screens/Catalogo";
+import Product from "../screens/Product";
 
 const ShopStack = createStackNavigator();
 
